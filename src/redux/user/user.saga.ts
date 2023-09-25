@@ -13,6 +13,7 @@ function* setUsersLoading(loading: boolean) {
       loading,
    });
 }
+
 function* setUsers(users?: User[]) {
    yield put({
       type: actionTypes.SET_USERS,

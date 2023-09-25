@@ -15,6 +15,7 @@ export const path: Path = {
          user: {
             title: 'ویرایش کاربر',
             href: '/users/:id',
+            getDynamicHref: value => `/users/${value}`,
          },
       },
    },

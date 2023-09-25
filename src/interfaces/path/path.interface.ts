@@ -2,6 +2,7 @@ export interface PathItem {
    title: string;
    href: string;
    navigateTo?: string;
+   getDynamicHref?: (value: string) => string;
 }
 
 export interface Path {
