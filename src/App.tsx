@@ -1,8 +1,15 @@
+import { ConfigProvider, theme } from 'antd'
 import { MainRoutes } from 'src/routes'
 
 const App = () => {
   return (
-    <MainRoutes />
+    <ConfigProvider
+      direction='rtl'
+      theme={{
+        algorithm: theme.darkAlgorithm
+      }}>
+      <MainRoutes />
+    </ConfigProvider>
   )
 }
 
