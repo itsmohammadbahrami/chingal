@@ -10,7 +10,7 @@ A simple user management app
 
 ## Scripts
 
-> Install **yarn** from [here](https://classic.yarnpkg.com/en/docs/install/#windows-stable). Try to not using **npm** anymore!
+> Install **yarn** from [here](https://classic.yarnpkg.com/en/docs/install/#windows-stable). Its better than **npm** :))
 
 ### `yarn ... [packages]`
 
