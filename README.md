@@ -1,6 +1,6 @@
-# console
+# Chingal
 
-Discover and experiment with edgecom products
+A simple user management app
 
 ## Technologies
 
