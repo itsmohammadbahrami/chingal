@@ -8,12 +8,12 @@ export const path: Path = {
    } as PathItem,
    users: {
       root: {
-         title: 'Users',
+         title: 'لیست کاربران',
          href: '/users',
       },
       items: {
          user: {
-            title: 'User',
+            title: 'ویرایش کاربر',
             href: '/users/:id',
          },
       },

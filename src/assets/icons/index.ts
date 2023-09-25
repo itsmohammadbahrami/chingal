@@ -1,5 +1,6 @@
 //@ts-nocheck
 
+export { ReactComponent as ArrowLeftIcon } from './arrow-left.svg';
 export { ReactComponent as LogoIcon } from './logo.svg';
 export { ReactComponent as MoonIcon } from './moon.svg';
 export { ReactComponent as SearchIcon } from './search.svg';

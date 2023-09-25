@@ -5,9 +5,8 @@ import { PathItem } from 'src/interfaces';
 import { Users } from 'src/pages';
 
 const Components = {
-   'Root': <>Root Component</>,
-   'Users': <Users />,
-   'User': <>User Component</>,
+   'لیست کاربران': <Users />,
+   'ویرایش کاربر': <>User Component</>,
 }
 
 export const MainRoutes: React.FC = () => {

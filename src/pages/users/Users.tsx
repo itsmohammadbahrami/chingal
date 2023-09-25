@@ -3,7 +3,7 @@ import { PageLayout } from 'src/components'
 const Users = () => {
     return (
         <PageLayout>
-            <div>Users</div>
+            <div className='bg-white h-full'>Users</div>
         </PageLayout>
     )
 }

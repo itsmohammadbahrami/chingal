@@ -1,5 +1,6 @@
 import { Layout } from 'antd'
 import Header from './header'
+import PageBreadcrumb from './page-breadcrumb'
 
 const PageLayout = ({ children }) => {
     return (
@@ -7,7 +8,8 @@ const PageLayout = ({ children }) => {
             <Layout.Header className='h-[147px] bg-transparent px-12 py-6' >
                 <Header />
             </Layout.Header>
-            <Layout.Content>
+            <Layout.Content className='p-12'>
+                <PageBreadcrumb />
                 {children}
             </Layout.Content>
         </Layout>
