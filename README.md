@@ -25,7 +25,6 @@ A simple user management app
 -  **`start`** Starts app in development mode.
 -  **`build`** Creates an optimized production build.
    <br />Note: Use node version >= 16 to build the project.
--  **`analyze`** Analyzes app's bundle size.
 
 ## Naming Conventions
 
