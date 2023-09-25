@@ -1,6 +1,7 @@
 import { Col, Row, Space } from 'antd'
 import { LogoIcon } from 'src/assets/icons'
 import ThemeSwitch from './theme-switch'
+import Search from './search'
 
 const Header = () => {
     return (
@@ -10,7 +11,10 @@ const Header = () => {
             </Col>
             <Col flex='auto'>
                 <Space className='w-full' direction='vertical' align='end'>
-                    <ThemeSwitch />
+                    <Space size={24}>
+                        <Search />
+                        <ThemeSwitch />
+                    </Space>
                 </Space>
             </Col>
         </Row>
