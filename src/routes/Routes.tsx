@@ -2,10 +2,11 @@ import React from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import { path } from './path';
 import { PathItem } from 'src/interfaces';
+import { Users } from 'src/pages';
 
 const Components = {
    'Root': <>Root Component</>,
-   'Users': <>Users Component</>,
+   'Users': <Users />,
    'User': <>User Component</>,
 }
 
