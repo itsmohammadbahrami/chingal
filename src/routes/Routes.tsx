@@ -2,11 +2,11 @@ import React from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import { path } from './path';
 import { PathItem } from 'src/interfaces';
-import { Users } from 'src/pages';
+import { Users, User } from 'src/pages';
 
 const Components = {
    'لیست کاربران': <Users />,
-   'ویرایش کاربر': <>User Component</>,
+   'ویرایش کاربر': <User />,
 }
 
 export const MainRoutes: React.FC = () => {
