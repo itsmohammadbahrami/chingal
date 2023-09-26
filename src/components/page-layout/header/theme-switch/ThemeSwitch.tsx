@@ -12,7 +12,7 @@ const ThemeSwitch = () => {
         <Switch
             size='default'
             checkedChildren={<MoonIcon className='fill-current w-5 h-5' />}
-            unCheckedChildren={<SunIcon className='fill-current w-5 h-5 -mt-[4px]' />}
+            unCheckedChildren={<SunIcon className='fill-current w-5 h-5 -mt-[6px]' />}
             defaultChecked={darkMode}
             onChange={(checked) => dispatch(setDarkMode(checked))}
         />
