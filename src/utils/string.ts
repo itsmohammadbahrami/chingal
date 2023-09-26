@@ -7,7 +7,7 @@ export const users = {
       {
          title: 'نام کاربر',
          dataIndex: 'name',
-         sorter: (a, b) => a?.name - b?.name,
+         sorter: (a, b) => a?.name.localeCompare(b?.name),
       },
       {
          title: 'سن',
@@ -17,12 +17,12 @@ export const users = {
       {
          title: 'شماره تلفن',
          dataIndex: 'phone',
-         sorter: (a, b) => a?.phone - b?.phone,
+         sorter: (a, b) => a?.phone.localeCompare(b?.phone),
       },
       {
          title: 'ایمیل',
          dataIndex: 'email',
-         sorter: (a, b) => a?.email - b?.email,
+         sorter: (a, b) => a?.email.localeCompare(b?.email),
       },
       {
          title: 'آدرس',
@@ -31,7 +31,7 @@ export const users = {
       {
          title: 'شرکت',
          dataIndex: 'company',
-         sorter: (a, b) => a?.company - b?.company,
+         sorter: (a, b) => a?.company.localeCompare(b?.company),
       },
    ],
 };
