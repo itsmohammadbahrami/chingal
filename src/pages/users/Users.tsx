@@ -21,11 +21,13 @@ interface DataType {
 }
 
 const columns: ColumnsType<DataType> = string.tableHeaders.map(
-    ({ title, dataIndex }) => ({
+    ({ title, dataIndex, sorter }) => ({
         key: title,
         title: title,
         dataIndex,
         align: 'center',
+        sorter,
+        // defaultSortOrder: 'descend'
     })
 );
 columns[0].fixed = 'left';
@@ -73,6 +75,7 @@ const Users = () => {
                         className: 'cursor-pointer'
                     }
                 }}
+                showSorterTooltip={false}
             />
         </PageLayout>
     )

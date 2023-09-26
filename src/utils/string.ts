@@ -7,18 +7,22 @@ export const users = {
       {
          title: 'نام کاربر',
          dataIndex: 'name',
+         sorter: (a, b) => a?.name - b?.name,
       },
       {
          title: 'سن',
          dataIndex: 'age',
+         sorter: (a, b) => a?.age - b?.age,
       },
       {
          title: 'شماره تلفن',
          dataIndex: 'phone',
+         sorter: (a, b) => a?.phone - b?.phone,
       },
       {
          title: 'ایمیل',
          dataIndex: 'email',
+         sorter: (a, b) => a?.email - b?.email,
       },
       {
          title: 'آدرس',
@@ -27,6 +31,7 @@ export const users = {
       {
          title: 'شرکت',
          dataIndex: 'company',
+         sorter: (a, b) => a?.company - b?.company,
       },
    ],
 };
