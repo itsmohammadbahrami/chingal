@@ -7,6 +7,11 @@ export const setDarkMode = (darkMode: boolean) => ({
    darkMode,
 });
 
+export const setSearchText = (searchText: string) => ({
+   type: actionTypes.SET_SEARCH_TEXT,
+   searchText,
+});
+
 export const setAppMessage = (
    type: NotificationType,
    title: string,

@@ -3,6 +3,7 @@ import { AppAction, AppDataState } from 'src/interfaces';
 
 const initialState: AppDataState = {
    darkMode: false,
+   searchText: '',
 };
 
 const appReducer = (state = initialState, action: AppAction) => {
@@ -11,6 +12,12 @@ const appReducer = (state = initialState, action: AppAction) => {
          return {
             ...state,
             darkMode: action.darkMode,
+         };
+
+      case actionTypes.SET_SEARCH_TEXT:
+         return {
+            ...state,
+            searchText: action.searchText,
          };
 
       default:

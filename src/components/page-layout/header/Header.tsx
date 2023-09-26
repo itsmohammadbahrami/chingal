@@ -5,10 +5,10 @@ import Search from './search'
 import { LogoIcon } from 'src/assets/icons'
 
 interface Props {
-    onSearch?: (text: string) => void
+    displaySearch?: boolean
 }
 
-const Header: React.FC<Props> = ({ onSearch }) => {
+const Header: React.FC<Props> = ({ displaySearch }) => {
     return (
         <Row justify='space-between'>
             <Col flex='200px'>
@@ -17,7 +17,7 @@ const Header: React.FC<Props> = ({ onSearch }) => {
             <Col flex='auto'>
                 <Space className='w-full' direction='vertical' align='end'>
                     <Space className='mt-4' size={24}>
-                        {onSearch && <Search onChange={onSearch} />}
+                        {displaySearch && <Search />}
                         <ThemeSwitch />
                     </Space>
                 </Space>

@@ -5,14 +5,14 @@ import PageBreadcrumb from './page-breadcrumb'
 
 interface Props {
     children: ReactElement;
-    onSearch?: (text: string) => void
+    displaySearch?: boolean
 }
 
-const PageLayout: React.FC<Props> = ({ children, onSearch }) => {
+const PageLayout: React.FC<Props> = ({ children, displaySearch }) => {
     return (
         <Layout className='w-screen h-screen' >
             <Layout.Header className='h-[147px] bg-transparent px-12 py-6' >
-                <Header onSearch={onSearch} />
+                <Header displaySearch={displaySearch} />
             </Layout.Header>
             <Layout.Content className='p-12'>
                 <PageBreadcrumb />

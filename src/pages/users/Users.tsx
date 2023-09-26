@@ -1,9 +1,9 @@
 import { Table } from 'antd'
 import { ColumnsType } from 'antd/es/table'
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { PageLayout } from 'src/components'
-import { UserDataState, State, User } from 'src/interfaces'
+import { UserDataState, State, User, AppDataState } from 'src/interfaces'
 import { getUsers } from 'src/redux'
 import { users as string } from 'src/utils/string'
 import dayjs from 'dayjs'
@@ -36,8 +36,8 @@ columns[0].fixed = 'left';
 const Users = () => {
     const dispatch = useDispatch<any>()
     const navigate = useNavigate()
-    const [searchText, setSearchText] = useState<string>()
     const { users, loading }: UserDataState = useSelector((state: State) => state.userData)
+    const { searchText }: AppDataState = useSelector((state: State) => state.appData)
 
     const tableData: DataType[] | undefined =
         users && users.length > 0 ?
@@ -57,7 +57,7 @@ const Users = () => {
     }, []) // eslint-disable-line
 
     return (
-        <PageLayout onSearch={(text) => setSearchText(text)}>
+        <PageLayout displaySearch>
             <Table
                 columns={columns}
                 dataSource={
