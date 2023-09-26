@@ -77,6 +77,18 @@ const App = () => {
 };
 ```
 
+Also we can use [Tailwind](https://tailwindcss.com/) for CSS in JS purpose.
+
+```js
+const App = () => {
+   return (
+      <>
+         <div className='bg-red-500'></div>
+      </>
+   );
+};
+```
+
 ## Functional Components Structure
 
 > Any variable that is not depend on component state or props should be outside of on it!
