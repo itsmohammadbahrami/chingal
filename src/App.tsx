@@ -10,7 +10,10 @@ const App = () => {
     <ConfigProvider
       direction='rtl'
       theme={{
-        algorithm: darkMode ? theme.darkAlgorithm : theme.defaultAlgorithm
+        algorithm: darkMode ? theme.darkAlgorithm : theme.defaultAlgorithm,
+        token: {
+          fontFamily: 'IranYekan'
+        }
       }}>
       <MainRoutes />
     </ConfigProvider>
