@@ -59,6 +59,7 @@ const Users = () => {
     return (
         <PageLayout displaySearch>
             <Table
+                className='rounded-2xl'
                 columns={columns}
                 dataSource={
                     searchText ?
