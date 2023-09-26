@@ -34,7 +34,7 @@ const PageBreadcrumb = () => {
     return (
         <Breadcrumb
             className='mb-8'
-            separator={<ArrowLeftIcon />}
+            separator={<ArrowLeftIcon className='fill-current' />}
             itemRender={(route) =>
                 <Typography.Text
                     className={`text-base ${route.href?.includes(':id') ? 'cursor-default' : 'cursor-pointer'}`}
