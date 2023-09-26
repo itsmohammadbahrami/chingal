@@ -1,2 +1,2 @@
-export { getUsers } from './user/user.actions';
+export { getUsers, getUser, editUser, deleteUser } from './user/user.actions';
 export { setAppMessage } from './app/app.actions';

@@ -3,6 +3,7 @@ import { UserDataState, UserDataAction } from 'src/interfaces';
 
 const initialState: UserDataState = {
    loading: true,
+   user: undefined,
    users: undefined,
 };
 
@@ -12,6 +13,12 @@ const userReducer = (state = initialState, action: UserDataAction) => {
          return {
             ...state,
             users: action.users,
+         };
+
+      case actionTypes.SET_USER:
+         return {
+            ...state,
+            user: action.user,
          };
 
       case actionTypes.SET_USERS_LOADING:

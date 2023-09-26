@@ -1,19 +1,40 @@
+import { Avatar, Card, Space, Typography } from 'antd'
 import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
+import { useParams } from 'react-router-dom'
 import { PageLayout } from 'src/components'
 import { UserDataState, State } from 'src/interfaces'
-import { getUsers } from 'src/redux'
+import { getUser } from 'src/redux'
+import { user as string } from 'src/utils/string'
+import EditUser from './edit-user'
 
 const User = () => {
     const dispatch = useDispatch<any>()
-    const { users, loading }: UserDataState = useSelector((state: State) => state.userData)
+    const { id } = useParams()
+    const { user, loading }: UserDataState = useSelector((state: State) => state.userData)
 
     useEffect(() => {
-        dispatch(getUsers());
+        id && dispatch(getUser(id));
     }, []) // eslint-disable-line
 
     return (
         <PageLayout>
+            <Card
+                className='w-[540px] h-auto max-h-[600px] p-10 rounded-3xl m-auto overflow-y-auto'
+                loading={loading}
+                title={
+                    <Typography.Text className='text-2xl font-normal'>
+                        {string.cardTitle}
+                    </Typography.Text>
+                }>
+                <Space className='w-full' direction='vertical' size={28} align='center'>
+                    <Avatar
+                        className='w-28 h-28 border-blue-500 border-2'
+                        src={user?.avatar}
+                        alt='Avatar' />
+                    <EditUser />
+                </Space>
+            </Card>
         </PageLayout>
     )
 }
