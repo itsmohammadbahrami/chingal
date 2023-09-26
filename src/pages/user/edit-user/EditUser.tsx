@@ -7,6 +7,7 @@ import { State, UserDataState } from 'src/interfaces'
 import { deleteUser, editUser } from 'src/redux'
 import { path } from 'src/routes'
 import { user as string } from 'src/utils/string'
+import { validateEmail } from 'src/utils/utils'
 
 const EditUser = () => {
     const dispatch = useDispatch<any>()
@@ -41,7 +42,6 @@ const EditUser = () => {
     return (
         <Form
             name='edit-user-form'
-            // initialValues={initialData}
             onFinish={onSubmit}
             layout='vertical'
             size='large'
@@ -55,7 +55,10 @@ const EditUser = () => {
                         className='w-full'
                         name='name'
                         label={string.formItems.name}
-                        rules={[{ required: true, message: string.formItems.message(string.formItems.name) }]}>
+                        rules={[{
+                            required: true,
+                            message: string.formItems.message(string.formItems.name),
+                        }]}>
                         <Input autoFocus />
                     </Form.Item>
                 </Col>
@@ -73,7 +76,19 @@ const EditUser = () => {
                         className='w-full'
                         name='email'
                         label={string.formItems.email}
-                        rules={[{ required: true, type: 'email', message: string.formItems.message(string.formItems.email) }]}>
+                        rules={[{
+                            required: true,
+                            type: 'email',
+                            validator: (_, value: string) => {
+                                if (value?.trim()?.length === 0)
+                                    return Promise.reject(new Error(string.formItems.message(string.formItems.email)));
+                                else
+                                    if (!validateEmail(value))
+                                        return Promise.reject(new Error(string.formItems.emailFormatError));
+                                return Promise.resolve();
+
+                            },
+                        }]}>
                         <Input />
                     </Form.Item>
                 </Col>

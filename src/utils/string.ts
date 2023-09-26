@@ -54,5 +54,6 @@ export const user = {
       yes: 'بله',
       cancel: 'بازگشت',
       message: label => `لطفا ${label} را وارد کنید`,
+      emailFormatError: 'آدرس ایمیل صحیح نمیباشد',
    },
 };
