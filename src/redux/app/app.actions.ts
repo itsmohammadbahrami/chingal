@@ -12,6 +12,11 @@ export const setSearchText = (searchText: string) => ({
    searchText,
 });
 
+export const setSortOrder = (sortOrder: any) => ({
+   type: actionTypes.SET_SORT_ORDER,
+   sortOrder,
+});
+
 export const setAppMessage = (
    type: NotificationType,
    title: string,

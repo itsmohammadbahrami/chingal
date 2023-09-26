@@ -4,6 +4,7 @@ import { AppAction, AppDataState } from 'src/interfaces';
 const initialState: AppDataState = {
    darkMode: false,
    searchText: '',
+   sortOrder: undefined,
 };
 
 const appReducer = (state = initialState, action: AppAction) => {
@@ -18,6 +19,12 @@ const appReducer = (state = initialState, action: AppAction) => {
          return {
             ...state,
             searchText: action.searchText,
+         };
+
+      case actionTypes.SET_SORT_ORDER:
+         return {
+            ...state,
+            sortOrder: action.sortOrder,
          };
 
       default:

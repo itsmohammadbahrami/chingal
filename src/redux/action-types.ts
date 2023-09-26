@@ -1,6 +1,7 @@
 export const app = {
    SET_DARK_MODE: 'SET_DARK_MODE',
    SET_SEARCH_TEXT: 'SET_SEARCH_TEXT',
+   SET_SORT_ORDER: 'SET_SORT_ORDER',
 };
 
 export const user = {

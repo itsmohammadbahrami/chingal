@@ -4,7 +4,7 @@ import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { PageLayout } from 'src/components'
 import { UserDataState, State, User, AppDataState } from 'src/interfaces'
-import { getUsers } from 'src/redux'
+import { getUsers, setSortOrder } from 'src/redux'
 import { users as string } from 'src/utils/string'
 import dayjs from 'dayjs'
 import { useNavigate } from 'react-router-dom'
@@ -20,24 +20,24 @@ interface DataType {
     company: string;
 }
 
-const columns: ColumnsType<DataType> = string.tableHeaders.map(
-    ({ title, dataIndex, sorter }) => ({
-        key: title,
-        title: title,
-        dataIndex,
-        align: 'center',
-        sorter,
-        // defaultSortOrder: 'descend'
-    })
-);
-columns[0].fixed = 'left';
-
 
 const Users = () => {
     const dispatch = useDispatch<any>()
     const navigate = useNavigate()
     const { users, loading }: UserDataState = useSelector((state: State) => state.userData)
-    const { searchText }: AppDataState = useSelector((state: State) => state.appData)
+    const { searchText, sortOrder }: AppDataState = useSelector((state: State) => state.appData)
+
+    const columns: ColumnsType<DataType> = string.tableHeaders.map(
+        ({ title, dataIndex, sorter }) => ({
+            key: title,
+            title: title,
+            dataIndex,
+            align: 'center',
+            sorter,
+            defaultSortOrder: sortOrder?.[dataIndex],
+        })
+    );
+    columns[0].fixed = 'left';
 
     const tableData: DataType[] | undefined =
         users && users.length > 0 ?
@@ -76,6 +76,12 @@ const Users = () => {
                     }
                 }}
                 showSorterTooltip={false}
+                onChange={(pagination, filters, sorter, extra) => {
+                    dispatch(setSortOrder({
+                        //@ts-ignore
+                        [sorter.field]: sorter.order
+                    }))
+                }}
             />
         </PageLayout>
     )
