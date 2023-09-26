@@ -133,7 +133,7 @@ const EditUser = () => {
                 </Col>
                 <Col xs={24} md={12}>
                     <Button
-                        className='w-full'
+                        className='w-full mt-4 md:mt-0'
                         htmlType='submit'
                         size='large'
                         type='primary'
@@ -150,7 +150,7 @@ const EditUser = () => {
                         onConfirm={onDelete}
                     >
                         <Button
-                            className='w-full'
+                            className='w-full mt-4 md:mt-0'
                             size='large'
                             type='primary'
                             danger

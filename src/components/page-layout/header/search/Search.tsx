@@ -12,7 +12,7 @@ const Search: React.FC = () => {
 
     return (
         <Input
-            className='rounded-[20px] w-[512px] px-4 py-2'
+            className='rounded-[20px] w-auto px-4 py-2 md:w-80 lg:w-[512px]'
             value={searchText}
             placeholder={string.searchPlaceholder}
             prefix={<SearchIcon className='fill-current' />}

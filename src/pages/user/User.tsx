@@ -20,7 +20,7 @@ const User = () => {
     return (
         <PageLayout>
             <Card
-                className='w-[540px] h-auto max-h-[600px] p-10 rounded-3xl m-auto overflow-y-auto'
+                className='w-3/4 h-auto max-h-[600px] p-10 rounded-3xl m-auto overflow-y-auto md:w-[540px]'
                 loading={loading}
                 title={
                     <Typography.Text className='text-2xl font-normal'>
