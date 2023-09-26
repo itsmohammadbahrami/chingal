@@ -1,6 +1,6 @@
 import { Table } from 'antd'
 import { ColumnsType } from 'antd/es/table'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { PageLayout } from 'src/components'
 import { UserDataState, State, User } from 'src/interfaces'
@@ -34,6 +34,7 @@ columns[0].fixed = 'left';
 const Users = () => {
     const dispatch = useDispatch<any>()
     const navigate = useNavigate()
+    const [searchText, setSearchText] = useState<string>()
     const { users, loading }: UserDataState = useSelector((state: State) => state.userData)
 
     const tableData: DataType[] | undefined =
@@ -54,10 +55,13 @@ const Users = () => {
     }, []) // eslint-disable-line
 
     return (
-        <PageLayout>
+        <PageLayout onSearch={(text) => setSearchText(text)}>
             <Table
                 columns={columns}
-                dataSource={tableData}
+                dataSource={
+                    searchText ?
+                        tableData?.filter(item => item.name.includes(searchText))
+                        : tableData}
                 loading={loading}
                 scroll={{ x: 1000, y: 520 }}
                 size='middle'
