@@ -18,8 +18,10 @@ const EditUser = () => {
     useEffect(() => {
         if (!user) return
 
-        form.setFieldsValue(user)
-        form.setFieldValue('age', dayjs().diff(user.dateOfBirth, 'years'))
+        form.setFieldsValue({
+            ...user,
+            age: dayjs().diff(user.dateOfBirth, 'years')
+        })
     }, [user]) // eslint-disable-line
 
     const onSubmit = (values) => {
