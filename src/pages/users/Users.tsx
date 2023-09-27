@@ -9,6 +9,7 @@ import { users as string } from 'src/utils/string'
 import dayjs from 'dayjs'
 import { useNavigate } from 'react-router-dom'
 import { path } from 'src/routes'
+import { testIds } from 'src/utils/constant'
 
 interface DataType {
     key?: string;
@@ -60,6 +61,7 @@ const Users = () => {
         <PageLayout displaySearch>
             <Table
                 className='rounded-2xl'
+                data-testid={testIds.users.table}
                 columns={columns}
                 dataSource={
                     searchText ?
@@ -71,6 +73,7 @@ const Users = () => {
                 pagination={{ hideOnSinglePage: true, pageSize: 10 }}
                 onRow={(data, index) => {
                     return {
+                        'data-testid': testIds.users.tableRow + index,
                         onClick: () => data.key && path.users.items.user?.getDynamicHref &&
                             navigate(path.users.items.user?.getDynamicHref(data.key)),
                         className: 'cursor-pointer'

@@ -3,6 +3,7 @@ import { user as actionTypes } from 'src/redux/action-types';
 import { all, put, takeLatest } from 'redux-saga/effects';
 import { User, SagaAction } from 'src/interfaces';
 import { setAppMessage } from 'src/redux/actions';
+import { user as string } from 'src/utils/string';
 
 const url = {
    getUsers: '/users',
@@ -64,7 +65,7 @@ function* editUser(action?: SagaAction) {
 
    try {
       const response = yield axiosBase.put(url.getUser(user.id), user);
-      response && setAppMessage('success', 'اطلاعات کاربر با موفقیت ویرایش شد');
+      response && setAppMessage('success', string.formItems.editSuccessfull);
       yield setUser(response?.data);
    } catch (err) {
       console.log(err);
@@ -79,7 +80,7 @@ function* deleteUser(action?: SagaAction) {
 
    try {
       const response = yield axiosBase.delete(url.getUser(id));
-      response && setAppMessage('success', 'کاربر با موفقیت حذف شد');
+      response && setAppMessage('success', string.formItems.deleteSuccessfull);
       onSuccess && onSuccess();
    } catch (err) {
       console.log(err);

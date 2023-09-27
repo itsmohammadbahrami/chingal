@@ -4,6 +4,7 @@ import { useNavigate, useParams } from 'react-router-dom'
 import { ArrowLeftIcon } from 'src/assets/icons'
 import { PathItem } from 'src/interfaces'
 import { path } from 'src/routes'
+import { testIds } from 'src/utils/constant'
 
 const PageBreadcrumb = () => {
     const navigate = useNavigate()
@@ -34,6 +35,7 @@ const PageBreadcrumb = () => {
     return (
         <Breadcrumb
             className='mb-8'
+            data-testid={testIds.layout.breadcrumb}
             separator={<ArrowLeftIcon className='fill-current' />}
             itemRender={(route) =>
                 <Typography.Text

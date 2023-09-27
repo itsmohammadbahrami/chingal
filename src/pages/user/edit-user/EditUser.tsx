@@ -6,6 +6,7 @@ import { useNavigate } from 'react-router-dom'
 import { State, UserDataState } from 'src/interfaces'
 import { deleteUser, editUser } from 'src/redux'
 import { path } from 'src/routes'
+import { testIds } from 'src/utils/constant'
 import { user as string } from 'src/utils/string'
 import { validateEmail } from 'src/utils/utils'
 
@@ -61,7 +62,10 @@ const EditUser = () => {
                             required: true,
                             message: string.formItems.message(string.formItems.name),
                         }]}>
-                        <Input autoFocus />
+                        <Input
+                            autoFocus
+                            data-testid={testIds.editUser.form.name}
+                        />
                     </Form.Item>
                 </Col>
                 <Col xs={24} md={12}>
@@ -70,7 +74,9 @@ const EditUser = () => {
                         name='age'
                         label={string.formItems.age}
                         rules={[{ required: true, message: string.formItems.message(string.formItems.age) }]}>
-                        <InputNumber className='w-full' />
+                        <InputNumber
+                            className='w-full'
+                            data-testid={testIds.editUser.form.age} />
                     </Form.Item>
                 </Col>
                 <Col xs={24} md={12}>
@@ -91,7 +97,7 @@ const EditUser = () => {
 
                             },
                         }]}>
-                        <Input />
+                        <Input data-testid={testIds.editUser.form.email} />
                     </Form.Item>
                 </Col>
                 <Col xs={24} md={12}>
@@ -100,7 +106,8 @@ const EditUser = () => {
                         name='phoneNumber'
                         label={string.formItems.phoneNumber}
                         rules={[{ required: true, message: string.formItems.message(string.formItems.phoneNumber) }]}>
-                        <Input className='w-full' />
+                        <Input
+                            data-testid={testIds.editUser.form.phone} />
                     </Form.Item>
                 </Col>
                 <Col xs={24} md={6}>
@@ -109,7 +116,7 @@ const EditUser = () => {
                         name='country'
                         label={string.formItems.country}
                         rules={[{ required: true, message: string.formItems.message(string.formItems.country) }]}>
-                        <Input className='w-full' />
+                        <Input data-testid={testIds.editUser.form.country} />
                     </Form.Item>
                 </Col>
                 <Col xs={24} md={6}>
@@ -118,7 +125,7 @@ const EditUser = () => {
                         name='city'
                         label={string.formItems.city}
                         rules={[{ required: true, message: string.formItems.message(string.formItems.city) }]}>
-                        <Input className='w-full' />
+                        <Input data-testid={testIds.editUser.form.city} />
                     </Form.Item>
                 </Col>
                 <Col xs={24} md={6}>
@@ -127,7 +134,7 @@ const EditUser = () => {
                         name='street'
                         label={string.formItems.street}
                         rules={[{ required: true, message: string.formItems.message(string.formItems.street) }]}>
-                        <Input className='w-full' />
+                        <Input data-testid={testIds.editUser.form.street} />
                     </Form.Item>
                 </Col>
                 <Col xs={24} md={6}>
@@ -136,7 +143,7 @@ const EditUser = () => {
                         name='zipcode'
                         label={string.formItems.zipcode}
                         rules={[{ required: true, message: string.formItems.message(string.formItems.zipcode) }]}>
-                        <Input className='w-full' />
+                        <Input data-testid={testIds.editUser.form.zipCode} />
                     </Form.Item>
                 </Col>
                 <Col xs={24}>
@@ -145,12 +152,13 @@ const EditUser = () => {
                         name='company'
                         label={string.formItems.company}
                         rules={[{ required: true, message: string.formItems.message(string.formItems.company) }]}>
-                        <Input className='w-full' />
+                        <Input data-testid={testIds.editUser.form.company} />
                     </Form.Item>
                 </Col>
                 <Col xs={24} md={12}>
                     <Button
                         className='w-full mt-4 md:mt-0'
+                        data-testid={testIds.editUser.form.edit}
                         htmlType='submit'
                         size='large'
                         type='primary'
@@ -165,9 +173,14 @@ const EditUser = () => {
                         okText={string.formItems.yes}
                         cancelText={string.formItems.cancel}
                         onConfirm={onDelete}
+                        okButtonProps={{
+                            // eslint-disable-next-line
+                            'data-testid': testIds.editUser.form.deleteConfirm
+                        }}
                     >
                         <Button
                             className='w-full mt-4 md:mt-0'
+                            data-testid={testIds.editUser.form.delete}
                             size='large'
                             type='primary'
                             danger

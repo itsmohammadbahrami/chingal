@@ -55,5 +55,7 @@ export const user = {
       cancel: 'بازگشت',
       message: label => `لطفا ${label} را وارد کنید`,
       emailFormatError: 'آدرس ایمیل صحیح نمیباشد',
+      editSuccessfull: 'اطلاعات کاربر با موفقیت ویرایش شد',
+      deleteSuccessfull: 'کاربر با موفقیت حذف شد',
    },
 };

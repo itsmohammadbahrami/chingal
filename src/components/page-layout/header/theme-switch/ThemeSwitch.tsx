@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { MoonIcon, SunIcon } from 'src/assets/icons'
 import { AppDataState, State } from 'src/interfaces'
 import { setDarkMode } from 'src/redux/actions'
+import { testIds } from 'src/utils/constant'
 
 const ThemeSwitch = () => {
     const dispatch = useDispatch<any>()
@@ -10,6 +11,7 @@ const ThemeSwitch = () => {
 
     return (
         <Switch
+            data-testid={testIds.header.themeSwitch}
             size='default'
             checkedChildren={<MoonIcon className='fill-current w-5 h-5' />}
             unCheckedChildren={<SunIcon className='fill-current w-5 h-5 -mt-[6px]' />}

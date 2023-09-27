@@ -23,6 +23,7 @@ A simple user management app
 ### `yarn ...`
 
 -  **`start`** Starts app in development mode.
+-  **`test:e2e`** Starts cypress test IDE (Note: Before this step, please run project using yarn start).
 -  **`build`** Creates an optimized production build.
    <br />Note: Use node version >= 16 to build the project.
 
